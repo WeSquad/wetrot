@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "features"
         },
         glue = {
-                "cucumber/steps",
+                "cucumber/stepdefs",
                 "cucumber/config"
         }
 )

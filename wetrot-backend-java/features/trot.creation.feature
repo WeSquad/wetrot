@@ -4,5 +4,6 @@ Feature: Trot creation
   @Account
   Scenario: Create a Trot by an administrator
     Given an admin user existing in the system
+    Given a Trot of brand Xiaomi
     When he want to create a trot
     Then the trot is created
