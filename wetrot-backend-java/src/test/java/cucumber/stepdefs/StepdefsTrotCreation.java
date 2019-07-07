@@ -42,7 +42,7 @@ public class StepdefsTrotCreation {
                 .brand("Xiaomi")
                 .batteryCapacity(5500)
                 .currentBatteryLevel(2000)
-                .wearLevel(0)
+                .usury(0)
                 .wearLife(990)
                 .build();
         context.givenObject(trot, Trot.class);

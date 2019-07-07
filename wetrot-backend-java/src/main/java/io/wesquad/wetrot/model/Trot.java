@@ -16,6 +16,6 @@ public class Trot {
     private int batteryCapacity;
     private String localization;
     private String brand;
-    private int wearLevel;
+    private int usury;
     private int wearLife;
 }
