@@ -35,11 +35,12 @@ public class StepdefsTrotCreation {
         context.givenObject(user, User.class);
     }
 
-    @Given("a Trot of brand Xiaomi")
-    public void a_Trot_of_brand_Xiaomi() {
+    @Given("a Trot of brand (.*) and of name (.*)")
+    public void a_Trot_of_brand_Xiaomi(String brand, String name) {
         Trot trot = Trot.builder()
                 .name("first trot")
-                .brand("Xiaomi")
+                .brand(brand)
+                .brand(name)
                 .batteryCapacity(5500)
                 .currentBatteryLevel(2000)
                 .usury(0)

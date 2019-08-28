@@ -18,4 +18,5 @@ public class TrotController {
     public Trot create(@RequestBody Trot trot) {
         return trotService.create(trot);
     }
+
 }
