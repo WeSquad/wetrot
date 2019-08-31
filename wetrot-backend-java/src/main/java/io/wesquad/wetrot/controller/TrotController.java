@@ -5,6 +5,9 @@ import io.wesquad.wetrot.service.TrotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/trots")
@@ -15,7 +18,7 @@ public class TrotController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public Trot create(@RequestBody Trot trot) {
+    public Mono<Trot> create(@RequestBody Trot trot) {
         return trotService.create(trot);
     }
 

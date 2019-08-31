@@ -18,6 +18,9 @@ import org.junit.runner.RunWith;
         glue = {
                 "cucumber/stepdefs",
                 "cucumber/config"
+        },
+        tags = {
+                "@Catalog"
         }
 )
 public class RunCucumberTest {
