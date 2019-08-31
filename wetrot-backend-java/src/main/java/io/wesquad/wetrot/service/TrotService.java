@@ -27,7 +27,7 @@ public class TrotService {
     }
 
     public Mono<Void> delete(UUID uid) {
-
-        return Mono.empty();
+        Mono<Trot> trot = trotRepository.findById(uid);
+        return trotRepository.delete(trot.block());
     }
 }

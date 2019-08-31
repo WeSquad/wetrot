@@ -41,7 +41,26 @@ public class TrotServiceTest {
 
     @Test
     void delete() {
+        // arrange
+        Trot trot = Trot.builder()
+                .name("myFirstTrot")
+                .brand("wesquad")
+                .localization("Paris")
+                .batteryCapacity(100)
+                .currentBatteryLevel(50)
+                .usury(3)
+                .wearLife(60)
+                .build();
+        Mockito.when(repositoryMock.save(trot)).thenReturn(Mono.just(trot));
+        Mono<Trot> created = service.create(trot);
 
-        fail();
+        Mockito.when(repositoryMock.findById(created.block().getUid())).thenReturn(created);
+        Mockito.when(repositoryMock.delete(created.block())).thenReturn(Mono.empty());
+
+        // act
+        Mono<Void> deleted = service.delete(created.block().getUid());
+
+        // assert
+        StepVerifier.create(deleted).verifyComplete();
     }
 }

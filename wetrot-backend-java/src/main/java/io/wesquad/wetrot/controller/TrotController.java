@@ -22,4 +22,9 @@ public class TrotController {
         return trotService.create(trot);
     }
 
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void delete(@PathVariable String id) {
+        trotService.delete(UUID.fromString(id));
+    }
 }
