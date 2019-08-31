@@ -39,4 +39,9 @@ public class TrotServiceTest {
         Assertions.assertThat(created.block().getUid()).isNotNull();
     }
 
+    @Test
+    void delete() {
+
+        fail();
+    }
 }

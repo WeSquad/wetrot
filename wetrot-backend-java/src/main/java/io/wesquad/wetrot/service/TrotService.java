@@ -26,4 +26,8 @@ public class TrotService {
         return trotRepository.save(trot);
     }
 
+    public Mono<Void> delete(UUID uid) {
+
+        return Mono.empty();
+    }
 }
