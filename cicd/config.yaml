@@ -1,0 +1,2 @@
+dockerRegistryBaseUrl: 'https://index.docker.io/v1'
+dockerRegistryImageRepository: 'ken2ke'
