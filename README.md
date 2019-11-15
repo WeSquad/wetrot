@@ -36,14 +36,14 @@ _4._ Set to use [Java Google style](https://github.com/google/styleguide/blob/gh
 _5._ Compile :
 
 ```bash
-./ci/build/compile.sh
+mvn clean package
 ```
 
 _6._ Run Backend :
 
 ```bash
 cd wetrot-backend-java
-mvn spring-boot:run
+mvn spring-boot:run -Dmaven.test.skip=true
 ```
 
 _8._ Access the [application UI](http://localhost:8080)
