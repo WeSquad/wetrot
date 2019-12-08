@@ -5,6 +5,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Trot } from '../../src/trot/entity/trot.entity';
 import { Repository } from 'typeorm';
 import { ITrot } from 'src/trot/model/trot.i';
+
 describe('TrotService', () => {
     let module: TestingModule;
     let service: TrotService;
