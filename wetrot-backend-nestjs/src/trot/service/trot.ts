@@ -23,4 +23,8 @@ export class TrotService {
         trot.wearLife = trotDto.wearLife;
         return await this.accountRepository.save(trot);
      }
+
+     delete(trotName: string) {
+      return null;
+      }
 }
