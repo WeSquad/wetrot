@@ -1,11 +1,16 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post, HttpCode, Body } from '@nestjs/common';
 import { TrotDto } from '../model/trotDto';
 import { ITrot } from '../model/trot.i';
+import { TrotService } from '../service/trot';
 
 @Controller('/api/v1/trots')
 export class TrotController {
 
-    create(trotDto: TrotDto): Promise<ITrot> {
-        return  null;
+    constructor(private service: TrotService) {}
+
+    @Post()
+    @HttpCode(201)
+    create(@Body() trotDto: TrotDto) {
+        return this.service.create(trotDto);
     }
 }

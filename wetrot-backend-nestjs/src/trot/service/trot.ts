@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Body } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Trot } from '../entity/trot.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -17,6 +17,7 @@ export class TrotService {
         trot.name = trotDto.name;
         trot.batteryCapacity = trotDto.batteryCapacity;
         trot.currentBatteryLevel = trotDto.currentBatteryLevel;
+        trot.localization = trotDto.localization;
         trot.usury = trotDto.usury;
         trot.wearLife = trotDto.wearLife;
         return await this.accountRepository.save(trot);

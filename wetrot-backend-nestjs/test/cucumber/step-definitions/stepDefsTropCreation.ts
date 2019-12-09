@@ -26,6 +26,7 @@ export class StepDefsTropCreation {
         this.trot.brand = brand;
         this.trot.name = name;
         this.trot.batteryCapacity = 5500;
+        this.trot.localization = '48.8534;2.3488',
         this.trot.currentBatteryLevel = 2000;
         this.trot.usury = 0;
         this.trot.wearLife = 990;
