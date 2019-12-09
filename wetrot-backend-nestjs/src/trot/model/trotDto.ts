@@ -1,5 +1,6 @@
 export class TrotDto {
     name: string;
+    uuid: string;
     currentBatteryLevel: number;
     batteryCapacity: number;
     localization: string;

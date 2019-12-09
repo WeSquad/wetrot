@@ -12,7 +12,7 @@ dotenv.config();
     UserModule,
     TrotModule,
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mysql',
       host: `${process.env.HOST}`,
       port: Number(process.env.PORT),
       username: `${process.env.USERNAME}`,

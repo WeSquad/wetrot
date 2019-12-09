@@ -6,6 +6,9 @@ export class Trot {
     id: number;
 
     @Column()
+    uuid: string;
+
+    @Column()
     name: string;
 
     @Column()

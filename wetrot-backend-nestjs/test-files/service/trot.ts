@@ -1,9 +1,11 @@
 import { TrotDto } from '../../src/trot/model/trotDto';
 import { ITrot } from 'src/trot/model/trot.i';
+import * as uuid from 'uuid';
 
 export const trotDto = new TrotDto();
 trotDto.brand = 'brand';
 trotDto.name = 'name';
+trotDto.uuid = uuid.v4();
 trotDto.batteryCapacity = 5500;
 trotDto.currentBatteryLevel = 2000;
 trotDto.usury = 0;
@@ -11,6 +13,7 @@ trotDto.wearLife = 990;
 
 export const itrot: ITrot = {
     id: 1,
+    uuid: uuid.v4(),
     brand: 'brand',
     name: 'name',
     batteryCapacity: 5500,

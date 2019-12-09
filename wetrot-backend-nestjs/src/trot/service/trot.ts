@@ -14,6 +14,7 @@ export class TrotService {
      async create(trotDto: TrotDto): Promise<ITrot> {
         const trot = new Trot();
         trot.brand = trotDto.brand;
+        trot.uuid =  trotDto.uuid;
         trot.name = trotDto.name;
         trot.batteryCapacity = trotDto.batteryCapacity;
         trot.currentBatteryLevel = trotDto.currentBatteryLevel;
