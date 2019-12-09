@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { trotDto, itrot} from '../../test-files';
+import { trotDto, itrot, deleteTrot} from '../../test-files';
 import { ITrot } from 'src/trot/model/trot.i';
 import { TrotController } from '../../src/trot/controller/trot';
 import { TrotService } from '../../src/trot/service/trot';
@@ -48,6 +48,7 @@ describe('TrotCpntroller', () => {
   it('should delete a trot', async () => {
     // Arrange
     const intputTrotName = 'X-01';
+    const deleteSpy = jest.spyOn(service, 'delete').mockResolvedValue(deleteTrot);
 
     // Act
     const ouput: DeleteResult = await controller.delete(intputTrotName);
@@ -55,5 +56,6 @@ describe('TrotCpntroller', () => {
     // Assert
     expect(ouput.raw).toBeDefined();
     expect(ouput.raw).toEqual(1);
+    expect(deleteSpy).toHaveBeenCalled();
   });
 });

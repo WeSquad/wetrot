@@ -14,8 +14,8 @@ export class TrotController {
     }
 
     @Delete(':name')
-    @HttpCode(201)
+    @HttpCode(200)
     delete(@Param('name') name: string) {
-        return null;
+        return this.service.delete(name);
     }
 }

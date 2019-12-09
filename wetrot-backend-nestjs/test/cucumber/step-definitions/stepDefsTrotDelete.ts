@@ -21,6 +21,6 @@ export class StepDefsTropDelete {
     public the_trot_is_deleted() {
         let response: AxiosResponse<ITrot>;
         response = threadLocals.get(typeof response);
-        assert.equal(response.status, 204);
+        assert.equal(response.status, 200);
     }
 }
