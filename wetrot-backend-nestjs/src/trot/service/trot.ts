@@ -1,5 +1,5 @@
 import { Injectable, Body } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Repository, DeleteResult } from 'typeorm';
 import { Trot } from '../entity/trot.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TrotDto } from '../model/trotDto';
@@ -8,7 +8,7 @@ import { ITrot } from '../model/trot.i';
 @Injectable()
 export class TrotService {
     constructor(
-            @InjectRepository(Trot) private readonly accountRepository: Repository<Trot>) {
+            @InjectRepository(Trot) private readonly trotRepository: Repository<Trot>) {
             }
 
      async create(trotDto: TrotDto): Promise<ITrot> {
@@ -21,10 +21,10 @@ export class TrotService {
         trot.localization = trotDto.localization;
         trot.usury = trotDto.usury;
         trot.wearLife = trotDto.wearLife;
-        return await this.accountRepository.save(trot);
+        return await this.trotRepository.save(trot);
      }
 
-     delete(trotName: string) {
-      return null;
+     async delete(name: string): Promise<DeleteResult>  {
+      return await this.trotRepository.delete({name});
       }
 }

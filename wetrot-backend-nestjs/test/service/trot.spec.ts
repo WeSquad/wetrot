@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TrotService } from '../../src/trot/service/trot';
-import { trotDto, itrot} from '../../test-files';
+import { trotDto, itrot, deleteTrot} from '../../test-files';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Trot } from '../../src/trot/entity/trot.entity';
 import { Repository, DeleteResult } from 'typeorm';
@@ -44,11 +44,14 @@ describe('TrotService', () => {
   it('should delete a trot', async () => {
     // Arrange
     const intputTrotName = 'X-01';
+    const deleteSpy = jest.spyOn(repository, 'delete').mockResolvedValue(deleteTrot);
 
     // Act
     const ouput: DeleteResult = await service.delete(intputTrotName);
 
     // Assert
     expect(ouput.raw).toBeDefined();
+    expect(ouput.raw).toEqual(1);
+    expect(deleteSpy).toHaveBeenCalled();
   });
 });

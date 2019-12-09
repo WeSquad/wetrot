@@ -1,6 +1,7 @@
 import { TrotDto } from '../../src/trot/model/trotDto';
 import { ITrot } from 'src/trot/model/trot.i';
 import * as uuid from 'uuid';
+import { DeleteResult } from 'typeorm';
 
 export const trotDto = new TrotDto();
 trotDto.brand = 'brand';
@@ -21,4 +22,9 @@ export const itrot: ITrot = {
     currentBatteryLevel: 2000,
     usury: 0,
     wearLife: 990,
+};
+
+export const deleteTrot: DeleteResult = {
+    raw: 1,
+    affected: 1,
 };
