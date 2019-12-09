@@ -1,4 +1,4 @@
-import { Injectable, Body } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Repository, DeleteResult } from 'typeorm';
 import { Trot } from '../entity/trot.entity';
 import { InjectRepository } from '@nestjs/typeorm';

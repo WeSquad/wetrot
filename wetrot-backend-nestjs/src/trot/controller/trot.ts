@@ -1,6 +1,5 @@
-import { Controller, Post, HttpCode, Body } from '@nestjs/common';
+import { Controller, Post, HttpCode, Body, Delete, Param } from '@nestjs/common';
 import { TrotDto } from '../model/trotDto';
-import { ITrot } from '../model/trot.i';
 import { TrotService } from '../service/trot';
 
 @Controller('/api/v1/trots')
@@ -12,5 +11,11 @@ export class TrotController {
     @HttpCode(201)
     create(@Body() trotDto: TrotDto) {
         return this.service.create(trotDto);
+    }
+
+    @Delete(':name')
+    @HttpCode(201)
+    delete(@Param('name') name: string) {
+        return null;
     }
 }
